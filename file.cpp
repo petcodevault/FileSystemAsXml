@@ -11,6 +11,7 @@ Folder Folder::createFromPath(const QString& path) {
 
     for (const auto& entry : dir.entryInfoList(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot | QDir::Hidden)) {
         if (entry.isDir()) {
+            qDebug() << "Dir:" << entry.absoluteFilePath();
             folder.addSubFolder(Folder::createFromPath(entry.absoluteFilePath()));
         } else if (entry.isFile()) {
             auto fileSize = entry.size();
