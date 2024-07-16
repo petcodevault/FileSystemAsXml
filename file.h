@@ -47,7 +47,7 @@ public:
 
     const QString& getName() const { return name; }
     const QList<Folder>& getSubFolders() const { return subFolders; }
-    const Folder& getTopLevelFolder() const {return subFolders.first(); }
+    Folder& getTopLevelFolder() {return subFolders.first(); }
     const QList<File>& getFiles() const { return files; }
 
     qint64 getSize() const {
